@@ -21,4 +21,3 @@ print("Az indulási idő:",H,":",M, sep=" ")
 
 
 
-
