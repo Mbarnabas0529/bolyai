@@ -2,8 +2,14 @@ dec1 = int(input("Irja be az 1. oktet értékét az íp címből (0-255):"))
 dec2 = int(input("Irja be a 2. oktet értékét az íp címből (0-255):"))
 dec3 = int(input("Irja be a 3. oktet értékét az íp címből (0-255):"))
 dec4 = int(input("Irja be a 4. oktet értékét az íp címből (0-255):"))
-if dec1 or dec2 or dec3 or dec4 > 255:
-    print("Ne adj meg nagyobb értéket 😠")
+if dec1 > 255:
+    print("Ne adj meg nagyobb értéket az elsőnél😠")
+if dec2 > 255:
+    print("Ne adj meg nagyobb értéket a másodiknál 😠")
+if dec3 > 255:
+    print("Ne adj meg nagyobb értéket a harmadiknál😠")
+if dec4 > 255:
+    print("Ne adj meg nagyobb értéket a negyediknél 😠")
 bin1 = ""
 bin2 = ""
 bin3 = ""
@@ -28,6 +34,8 @@ for i in range(7, -1, -1):
     if dec4 >= 0:
         bin4 = (str(dec4 % 2) + bin4)
         dec4 = dec4 // 2
-print(o1,o2,o3,o4,"ipv4 cím kettes számrendszerben kifejezve =",bin1,bin2,bin3,bin4, sep=".")
+print(o1,o2,o3,o4,sep=".", end=" ")
+print("ipv4 cím kettes számrendszerben kifejezve = ", end="")
+print( bin1,bin2,bin3,bin4, sep=".")
 fel2 = str(input("Írja be az ipv4-es címet (pl.:192.168.17.2):"))
 print(fel2, "ipv4 cím kettes számrendszerben kifejezve =")
