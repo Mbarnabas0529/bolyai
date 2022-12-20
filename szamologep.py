@@ -1,14 +1,21 @@
-def adas(x,y):
-        return x + y
-def kivon(x,y):
-        return x - y
-def szoroz(x,y):
-        return x * y
-def oszt(x,y):
-        return x / y
-def negyzetreemel(x,y):
-        return x ** y
-muvelet = input("Adj meg egy számolást")
-jelek = "+","-","*","/","**"
-for i in range(len(muvelet)):
-    print(muvelet[0],jelek,muvelet[1])
+import math
+
+feladat = input("Feladat: ")  # pl: 3!-25*3!+423**2-5!*3
+
+
+def isFactorial(feladat):
+    masolat = feladat
+
+    for i in feladat:
+        if not i.isdigit():
+            if i != "!":
+                masolat = masolat.replace(i, " ")
+
+    for i in masolat.split():
+        if "!" in i:
+            feladat = feladat.replace(i, str(math.factorial(int(i[:-1]))))
+
+    return eval(feladat)
+
+
+print(isFactorial(feladat))
