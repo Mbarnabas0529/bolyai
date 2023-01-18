@@ -15,10 +15,6 @@ else:
             print(ev)
             ev = str(asd)
 print("Digit of Life:", ev)
-
-
-
-#arian feladat:
 def digit(be):
     x = 0
     for i in be:
