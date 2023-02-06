@@ -25,8 +25,6 @@ print(f"Az osztály átlaga: {osztaly_osszeg/osztaly_szamlalo}")
 targy_osszeg={}
 targy_szamlalo={}
 for tanulo_neve,tanulo_jegyei in osztaly.items():
-    tanulo_osszeg=0
-    tanulo_szamlalo=0
     for targy,jegy in tanulo_jegyei.items():
         if targy not in targy_osszeg:
             targy_osszeg[targy]=0
