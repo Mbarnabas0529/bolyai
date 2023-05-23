@@ -37,3 +37,28 @@ def vignere_tabla():
     return tabla
 tabla = vignere_tabla()
 print("Vignere tabla:\n",tabla)
+
+print("4.feladat")
+
+with open("autok.txt", "r", encoding="utf-8") as f:
+    autok = [lines.strip().split(";") for lines in f]
+    ajto = sum(int(car[2])==5 for car in autok)
+    toyota = sum('Toyota' in car[0] for car in autok)
+    lft = max(autok,key=lambda x: int(x[1]))[0]
+    hsz = [(2023-int(car[1])) for car in autok if car[3] == "Homok"]
+    hae = sum(hsz)/len(hsz)
+    print("5 ajtós autóból:", ajto)
+    print("Ennyi Toyota van:", toyota)
+    print("legfiatalabb típusa:",lft)
+    print("életkor:",hsz)
+    print("Átlag életkor:",round(hae,2))
+with open("sotetkek.csv","w",encoding="utf-8") as file:
+    for car in autok:
+        if car[3] == "Sotetkek":
+            autok.sort(key=lambda x:int(x[1]))
+            print(";".join(car),file=file)
+
+
+
+
+
